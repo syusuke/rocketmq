@@ -97,8 +97,10 @@ public class RegisterBrokerBody extends RemotingSerializable {
 
     public static RegisterBrokerBody decode(byte[] data, boolean compressed) throws IOException {
         if (!compressed) {
+            // 没有压缩,就是JSON
             return RegisterBrokerBody.decode(data, RegisterBrokerBody.class);
         }
+        // 压缩构建对象
         long start = System.currentTimeMillis();
         InflaterInputStream inflaterInputStream = new InflaterInputStream(new ByteArrayInputStream(data));
         int dataVersionLength = readInt(inflaterInputStream);

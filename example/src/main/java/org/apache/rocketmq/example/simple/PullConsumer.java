@@ -28,7 +28,7 @@ public class PullConsumer {
     private static final Map<MessageQueue, Long> OFFSE_TABLE = new HashMap<MessageQueue, Long>();
 
     public static void main(String[] args) throws MQClientException {
-        DefaultMQPullConsumer consumer = new DefaultMQPullConsumer("please_rename_unique_group_name_5");
+        DefaultMQPullConsumer consumer = new DefaultMQPullConsumer("ProducerGroupName");
         consumer.setNamesrvAddr("127.0.0.1:9876");
         consumer.start();
 

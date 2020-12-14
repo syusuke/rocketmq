@@ -151,6 +151,7 @@ public class NamesrvStartup {
             }
         }));
 
+        // 启动 namesvr
         controller.start();
 
         return controller;
